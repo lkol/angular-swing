@@ -71,6 +71,7 @@
                 swingOnThrowoutright: '&',
                 swingOnThrowoutup: '&',
                 swingOnThrowoutdown: '&',
+                swingOnThrowoutend: '&',
                 swingOnThrowin: '&',
                 swingOnDragstart: '&',
                 swingOnDragmove: '&',
@@ -79,7 +80,7 @@
             link: function (scope, element, attrs, swingStack) {
 
                 var card = swingStack.add(element[0]),
-                    events = ['throwout', 'throwoutleft', 'throwoutright', 'throwoutup', 'throwoutdown', 'throwin', 'dragstart', 'dragmove', 'dragend'];
+                    events = ['throwout', 'throwoutleft', 'throwoutright', 'throwoutup', 'throwoutdown', 'throwoutend', 'throwin', 'dragstart', 'dragmove', 'dragend'];
 
                 // Map all Swing events to the scope expression.
                 // Map eventObject variable name to the expression wrapper fn.
@@ -96,6 +97,7 @@
                             case 'swingOnThrowoutright':
                             case 'swingOnThrowoutup':
                             case 'swingOnThrowoutdown':
+                            case 'swingOnThrowoutend':
                             case 'swingOnThrowout':
                                 if(scope.$$phase) {
                                     scope.$apply();
